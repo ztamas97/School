@@ -63,3 +63,4 @@ x = int(input('1. szám: '))
 y = int(input('2. szám: '))
 z = x + y
 print(z)
+# az int() függvény segítségével a zárójelben lévő értéket, ami string lenne integerré alakítjuk, ezután pedig már működik az összeadás.
