@@ -42,7 +42,7 @@ print(name)
 
 #3b Tároljunk el egy house változóba egy háztipust (Családiház, Társasház, Panelház), majd egy következő sorba ismét a house változóba egy eltérőt, irassuk ki az eredméynt!
 house = 'Családiház'
-house = 'Trásasház'
+house = 'Társasház'
 print (house)
 
 # az eredmény a második értékadásnál adott érték lesz, hiszen megváltozott a változó tartalma, kvázi felülírtuk! Erre mindig figyelni kell!
@@ -58,3 +58,8 @@ print ('Hello ', name, '!')
 
 # A kiíratásba egy kis csalás van, hiszen több külön álló részt akarunk kiíratni. Összefűzni úgy tudjuk ezeket, hogy a részek közé , -t rakunk
 # vagy + jellel össze fűzzük
+# 4b Kérjünk be két számot, a összegük eredményét tároljuk el egy sum nevű változóban, majd írassuk ki képernyőre az eredményt
+x = int(input('1. szám: '))
+y = int(input('2. szám: '))
+z = x + y
+print(z)
