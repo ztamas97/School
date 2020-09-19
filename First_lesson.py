@@ -6,7 +6,7 @@
 # 1 Kiíratás képernyőre print fügvénnyel.
 print('Hello word!')
     
-#A ('Hello word!') szintektika helyett megfelelő a ("Hello word!") szintaktika is! a Python fordító ezen nem problémázik!
+#A ('Hello word!') szintaktika helyett megfelelő a ("Hello word!") szintaktika is! a Python fordító ezen nem problémázik!
 #Bizonyos programozási nyelveknél a '' csak karaktert tartalmazhat, karakter sorozat(pl. string) csak "" között lehet.
 #De Pythonnál ezen nem kell problémáznunk. :)
 #Viszont a programunk akkor szép, ha szisztematikusan egyik fajta megoldást használjuk.
