@@ -83,8 +83,10 @@ print('A jelszava értékelve!\n')
 # a kiértékeléstől függetlenűl. Ebben az esetben a print('A jelszava értékelve!\n') mindig megtörténik.
 
 # While
+
 # while feltétel:
 #     utasítás
+
 # A while egy olyan szerkezet, melyben az adott utasítást addig ismét és ismét megcsináljuk, ameddig a feltétel igaz.
 # ha a feltétel ereménye hamis, akkor a whilenak vége.
 # Egy jól megírt program esetén az utasítás a feltételt hamisra kell állítsa egy idő után, különben végtelen ciklust kapunk.
@@ -119,6 +121,34 @@ while psw_ok:
 print('Sikeres jelszó megadás! Új jelszó: ', psw)
 
 # A feladatban a feltétel ellenőrzése nem a while után látható, ott csak a kiértékelést tartalmazó változó van.
-# Ittt mindig minimum 1* lefut a ciklusmag, az előző feladatban nem!
+# Itt mindig minimum 1* lefut a ciklusmag, az előző feladatban nem!
 # A feltétel eredményének állítása akkor történik meg egyedül, ha az if True értéket ad vissza, ekkor a psw_ok
 # változót False ra állítjuk, és a ciklus véget fog érni.
+
+#2c Készítsünk egy számkitalálós játékot. A programunk véletlenszerűen generáljon egy egész számot. Majd kérjen be a
+# felhasználótól is egy egészet. Ha megyegyezik a kettő a user nyert, ha nincs egyezés, írjuk ki, hogy a tipp kisebb vagy nagyobb
+# mint a kisorsolt szám, és kérjünk be egy új tippet.
+
+# For
+
+# for elem in szekvencia:
+#    utasítás
+
+# A for, vagy számlálós ciklus esetében fontos, hogy ismerjük az iterációk számát. A ciklus egy adott szekvencián(sorozaton)
+# halad végig, mondjuk egy intervallumon(0-100), egy stringen, egy összetett adatípus elemein(lásd később.).
+# Az adott elemmel, pedig végrehajtja a ciklusmagban lévő utasítást. Fontos mindig annyiszor fut le a programunk,
+# ahogyan azt definiáltuk.
+
+# Értéktartomány létrehozása. Ez egy fontos lépés, hiszen a ciklus működése során, ha számokkal dolgozunk ebben 'lépkedünk'
+for i in range(1,10):
+    print(i , end=',')
+# Az i a változó mely folyamatosan változik, a range az intervallum melyben mozgunk. Az intervallumunk alsó értéke az első szám
+# a második szám viszont már olyan, amit nem vehet fel az elem amit változtatunk, esetünkben az i.
+# a print függvény egy új lehetőségét is láthatjuk, az end kulcsszóval tudjuk megmondani mi legyen a sor vége elem, ami
+# alap esetben egy sortörés(enter)
+
+# 3a Írassuk ki a felhasználó által megadott pozitív egész számig, a számok négyzetét.
+print('\n3a: négyzetszámok kiíratása')
+n = int(input('n: '))
+for i in range (1, n+1):
+    print(i**2, end=', ')
