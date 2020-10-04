@@ -125,9 +125,26 @@ print('Sikeres jelszó megadás! Új jelszó: ', psw)
 # A feltétel eredményének állítása akkor történik meg egyedül, ha az if True értéket ad vissza, ekkor a psw_ok
 # változót False ra állítjuk, és a ciklus véget fog érni.
 
-#2c Készítsünk egy számkitalálós játékot. A programunk véletlenszerűen generáljon egy egész számot. Majd kérjen be a
+#2c Készítsünk egy számkitalálós játékot. A programunk véletlenszerűen generáljon egy egész számot 1 és 100 között. Majd kérjen be a
 # felhasználótól is egy egészet. Ha megyegyezik a kettő a user nyert, ha nincs egyezés, írjuk ki, hogy a tipp kisebb vagy nagyobb
 # mint a kisorsolt szám, és kérjünk be egy új tippet.
+print('\n2c: Számkitalálós játék')
+import random
+num = random.randint(1,100)
+print('Puska: ', num)
+tipp = 0
+while tipp != num:
+    tipp = int(input('Tipp:'))
+    if(tipp > num):
+        print('Túl nagy!')
+    elif(tipp < num):
+        print('Túl kicsi!')
+    else:
+        print('Gratulálok, eltaláltad!')
+# A random szám generálása később lesz részletesebben is. Egynelőre csak annyi, hogy a program elejére mindig kell egy import random
+# A generálás pedig a random.randint(min,max) meghívásával történik meg.
+# A feltételünk az, hogy a tipp nem egyenlő a számmal amit generáltunk. Amíg ez igaz mindig kérjünk be egy új számot,
+# és ellenőrizzük a generálthoz képest eltér e, ha nem akkor írjuk ki ezt.
 
 # For
 
@@ -140,6 +157,7 @@ print('Sikeres jelszó megadás! Új jelszó: ', psw)
 # ahogyan azt definiáltuk.
 
 # Értéktartomány létrehozása. Ez egy fontos lépés, hiszen a ciklus működése során, ha számokkal dolgozunk ebben 'lépkedünk'
+print('\nRange működése:')
 for i in range(1,10):
     print(i , end=',')
 # Az i a változó mely folyamatosan változik, a range az intervallum melyben mozgunk. Az intervallumunk alsó értéke az első szám
@@ -148,7 +166,44 @@ for i in range(1,10):
 # alap esetben egy sortörés(enter)
 
 # 3a Írassuk ki a felhasználó által megadott pozitív egész számig, a számok négyzetét.
-print('\n3a: négyzetszámok kiíratása')
+print('\n\n3a: négyzetszámok kiíratása')
 n = int(input('n: '))
 for i in range (1, n+1):
     print(i**2, end=', ')
+# A rangenek megadott paraméter lehet változó is mint látjuk. Fontos a felső határt nem érjük el amikor iterálunk végig az
+# elemeken, ezért a megadott értékhez hozzá adunk 1-et, és máris feloldottuk a problémát.
+
+# 3b Kérjünk be a felhasználótól egy nevet. Majd írjuk ki, egyesével a betűit egymás alá az adott névnek.
+print('\n\n3b: Név betűinek kiíratása')
+name= input('Kérem a nevét: ')
+for i in range (len(name)):
+    print(name[i])
+# A stringen történő végig járás, tehát végig iteráláshoz tudnunk kell meddig kell növelni az i értékét. A hossz lekérdezéséhez
+# a len függvényt használtuk. Ez megadta milyen hosszú a beadott érték. Egyedűl ezt az értéket adtuk át a rangenek.
+# Ha csak egy paramétere van a rangenek, az azt jelenti, hogy 0-tól indul, 1-el kisebb értékig mint a megadott.
+# Ez nekünk pont praktikus, hiszen a stringet 0-tól indexeljük.(Lásd Second_lesson.py)
+
+# 3c n-szer n-es hárömszög kiíratása * karakterekből
+# Példa:
+# n: 4
+# *
+# * *
+# * * *
+# * * * *
+print('\n3c: N*N-es háromszög kiíratása adott karakterből')
+n = int(input('n: '))
+for i in range(n):
+    for j in range(i + 1):
+        print('*', end=' ')
+    print()
+# A feladatban láthatjuk, hogy több for ciklus van egymásba ágyazva.  Az első ciklus 0-3 ig megy, ez felelős a sorokért.
+# A másik ciklus pedig 0-tól a külsö ciklus i értéke +1 ig megy. Tehát ha a külső érték(i) 0 akkor a belső érték(j) 1 ig megy.
+# Tehát minden sor értéke növekszik, így mindig több csillag érték kerül kiíratásra.
+# Python lehetőséget ad egy könyebb megoldásra is :D 
+
+print('\n3c 1.2: N*N-es háromszög kiíratása adott karakterből rövidebben')
+n = int(input('n: '))
+for i in range(n):
+    print('* '*(i+1))
+# A megoldás alapja hasonló mint alőbb, csak most egy ciklusunk van. A cikluson belűl pedig egy szórzás művelet látható.
+# Fontos, ha stringet szorzunk, akkor egymás mellé rakjuk annyiszor, amennyivel beszoroztuk.
